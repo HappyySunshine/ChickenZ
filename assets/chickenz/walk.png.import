@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://1d1vfhqw2tgn"
-path="res://.godot/imported/FreeArt_Topdown_Zombies.jpg-b23224c2be9cf540f2cffa83f38f21b2.ctex"
+uid="uid://cc42m35o5e52k"
+path="res://.godot/imported/walk.png-152fdc3a12cb186da5be58babcb5505e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/FreeArt_Topdown_Zombies.jpg"
-dest_files=["res://.godot/imported/FreeArt_Topdown_Zombies.jpg-b23224c2be9cf540f2cffa83f38f21b2.ctex"]
+source_file="res://assets/chickenz/walk.png"
+dest_files=["res://.godot/imported/walk.png-152fdc3a12cb186da5be58babcb5505e.ctex"]
 
 [params]
 

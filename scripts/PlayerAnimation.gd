@@ -1,8 +1,8 @@
-extends AnimatedSprite2D
+class_name PlayerAnimation extends AnimatedSprite2D
 
 
 
-enum AnimationState{ Idle, Movement}
+enum AnimationState{ Idle, Movement, Attack}
 var current = AnimationState.Idle
 
 
