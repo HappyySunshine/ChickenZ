@@ -3,12 +3,12 @@ extends CharacterBody2D
 
 const SPEED = 100.0
 @onready var animation = $Animation
-var attack: PlayerAttack
+var attack: ChickenAttackController
 const fetaher = preload("res://scenes/feather.tscn")
 const sparks = preload("res://scenes/sparks.tscn")
 
 func _ready():
-	attack = PlayerAttack.new()
+	attack = ChickenAttackController.new()
 	attack.setup(get_tree())
 
 func _input(event):

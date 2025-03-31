@@ -1,4 +1,4 @@
-class_name PlayerAnimation extends AnimatedSprite2D
+class_name ChickenAnimation extends AnimatedSprite2D
 
 
 

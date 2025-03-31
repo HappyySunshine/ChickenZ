@@ -1,4 +1,10 @@
-class_name PlayerAttack extends Node
+class_name ChickenAttackController extends Node
+
+class Attack:
+	var speed = 10
+	var range = 10
+	var damage = 10
+
 
 var speed = 10
 var range = 10
@@ -15,10 +21,9 @@ func attack(mouse_pos: Vector2,player_pos: Vector2, index: MouseButton ):
 	
 	var vec: Vector2 = (mouse_pos - player_pos).normalized()
 	var destination = player_pos + vec * range *10
-	var attack : Attack = preload("res://scenes/attack.tscn").instantiate()
+	var attack : ChickenAttackBody = preload("res://scenes/attack.tscn").instantiate()
 	attack.setup(player_pos, destination, speed, vec)
-
-	tree.root.call_deferred("add_node", attack)
+	tree.root.call_deferred("add_child", attack)
 
 	pass
 
