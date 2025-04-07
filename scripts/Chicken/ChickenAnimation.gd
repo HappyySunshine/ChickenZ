@@ -14,6 +14,8 @@ func animate():
 		play("Movement")
 	if chicken.state == ChickenController.State.Attacking:
 		play("attack")
+		await animation_finished
+		print("banana")
 		
 func set_state(state:State):
 	if state == current:
@@ -23,6 +25,7 @@ func set_state(state:State):
 		pass
 	if state == State.Movement:
 		play("Movement")
+		
 	current = state
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
