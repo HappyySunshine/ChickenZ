@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=4 uid="uid://dj3qjq381mnqi"]
+[gd_scene load_steps=26 format=4 uid="uid://dj3qjq381mnqi"]
 
 [ext_resource type="Texture2D" uid="uid://b5nuj6mpsvbg0" path="res://assets/sprout-lands/Sprout Lands - Sprites - Basic pack/Tilesets/Grass.png" id="1_sugp2"]
 [ext_resource type="Texture2D" uid="uid://de8h05xrmm6ti" path="res://assets/sprout-lands/Sprout Lands - Sprites - Basic pack/Tilesets/Hills.png" id="2_jyhfs"]
@@ -12,7 +12,6 @@
 [ext_resource type="Script" uid="uid://dvvlwkn64wpg0" path="res://scripts/egg.gd" id="7_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://b4nck0xkkm6yy" path="res://scenes/feather.tscn" id="10_ya4ey"]
 [ext_resource type="PackedScene" uid="uid://fngma86pjth4" path="res://scenes/sparks.tscn" id="11_eb6dy"]
-[ext_resource type="Texture2D" uid="uid://bvgdma8up6ngo" path="res://assets/sprout-lands/Sprout Lands - Sprites - Basic pack/Characters/Free Cow Sprites.png" id="13_trceg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tefeu"]
 texture = ExtResource("1_sugp2")
@@ -240,57 +239,6 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_o6xl0"]
 radius = 3.16228
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_muem4"]
-atlas = ExtResource("13_trceg")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0ld40"]
-atlas = ExtResource("13_trceg")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gqmmt"]
-atlas = ExtResource("13_trceg")
-region = Rect2(64, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_yc10j"]
-atlas = ExtResource("13_trceg")
-region = Rect2(0, 32, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jscy8"]
-atlas = ExtResource("13_trceg")
-region = Rect2(32, 32, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_pm3ni"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_muem4")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0ld40")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_gqmmt")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_yc10j")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jscy8")
-}],
-"loop": true,
-"name": &"walk",
-"speed": 5.0
-}]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_y6deb"]
-size = Vector2(18, 10)
-
 [node name="Node2D" type="Node2D"]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -352,16 +300,6 @@ position = Vector2(-3, -16)
 [node name="Sparks" parent="." instance=ExtResource("11_eb6dy")]
 visible = false
 position = Vector2(-4, -16)
-
-[node name="Cow" type="CharacterBody2D" parent="."]
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Cow"]
-sprite_frames = SubResource("SpriteFrames_pm3ni")
-autoplay = "default"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cow"]
-position = Vector2(-1, 6)
-shape = SubResource("RectangleShape2D_y6deb")
 
 [connection signal="animation_finished" from="Player/Animation" to="Player/Animation" method="_on_animation_finished"]
 [connection signal="body_entered" from="Egg/RigidBody2D" to="Egg" method="_on_rigid_body_2d_body_entered"]

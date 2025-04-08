@@ -2,6 +2,18 @@
 
 [ext_resource type="Texture2D" uid="uid://bu8y7reraqygq" path="res://assets/chickenz/feather.png" id="1_f7sq6"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_f7sq6"]
+atlas = ExtResource("1_f7sq6")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uauuc"]
+atlas = ExtResource("1_f7sq6")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7g5x6"]
+atlas = ExtResource("1_f7sq6")
+region = Rect2(80, 0, 16, 16)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_0ld40"]
 atlas = ExtResource("1_f7sq6")
 region = Rect2(0, 0, 16, 16)
@@ -14,20 +26,22 @@ region = Rect2(16, 0, 16, 16)
 atlas = ExtResource("1_f7sq6")
 region = Rect2(32, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_jscy8"]
-atlas = ExtResource("1_f7sq6")
-region = Rect2(48, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_pm3ni"]
-atlas = ExtResource("1_f7sq6")
-region = Rect2(64, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_y6deb"]
-atlas = ExtResource("1_f7sq6")
-region = Rect2(80, 0, 16, 16)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_og1vs"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f7sq6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uauuc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7g5x6")
+}],
+"loop": false,
+"name": &"dissolve",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_0ld40")
@@ -37,22 +51,13 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_yc10j")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jscy8")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_pm3ni")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_y6deb")
 }],
-"loop": true,
-"name": &"sparks",
+"loop": false,
+"name": &"feater",
 "speed": 5.0
 }]
 
 [node name="feather" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_og1vs")
-animation = &"sparks"
-frame_progress = 0.163393
+animation = &"feater"
+autoplay = "feater"

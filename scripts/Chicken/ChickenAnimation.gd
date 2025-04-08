@@ -14,8 +14,8 @@ func animate():
 		play("Movement")
 	if chicken.state == ChickenController.State.Attacking:
 		play("attack")
-		await animation_finished
-		print("banana")
+	
+		
 		
 func set_state(state:State):
 	if state == current:
@@ -38,8 +38,7 @@ func _process(delta: float) -> void:
 
 
 func _on_animation_finished() -> void:
-	print("attac")
-	if chicken.state == ChickenController.State.Attacking:
-		chicken.set_state(ChickenController.State.Default)
-	  
+	print("finished: ", animation)
+	if animation == "attack":
+		chicken.set_state(ChickenController.State.Default)  
 	pass # Replace with function body.

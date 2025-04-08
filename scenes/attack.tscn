@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://cvwfp1lv1172a"]
+[gd_scene load_steps=4 format=3 uid="uid://cvwfp1lv1172a"]
 
 [ext_resource type="Script" uid="uid://d35kllmqadnoh" path="res://scripts/Chicken/ChickenAttackBody.gd" id="1_nursx"]
+[ext_resource type="PackedScene" uid="uid://b4nck0xkkm6yy" path="res://scenes/feather.tscn" id="2_jy1op"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_trceg"]
 size = Vector2(12, 5)
@@ -11,5 +12,11 @@ collision_mask = 0
 gravity_scale = 0.0
 script = ExtResource("1_nursx")
 
+[node name="feather" parent="." instance=ExtResource("2_jy1op")]
+position = Vector2(-2.98023e-07, -1)
+scale = Vector2(0.75, 0.8125)
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_trceg")
+
+[connection signal="animation_finished" from="feather" to="." method="_on_feather_animation_finished"]

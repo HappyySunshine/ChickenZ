@@ -21,7 +21,6 @@ func set_state(new_state: State):
 		return
 		
 	if state == State.Attacking:
-		
 		var timer := Timer.new()
 		timer.name = "AttackCooldown"
 		add_child(timer)
